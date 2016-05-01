@@ -27,6 +27,11 @@ public class CarlCam{
 	    public void handleGpioPinDigitalStateChangeEvent(final GpioPinDigitalStateChangeEvent moveEvent){
 		System.out.println(System.currentTimeMillis() + " motion detected");
 		led.pulse(1000, true);
+		try{
+		    Runtime.getRuntime().exec("raspistill -o " + System.currentTimeMillis() + ".jpg");
+		}catch(IOException e){
+		    System.out.println("Error writing image ");
+		}
 	    }
 	});
         
