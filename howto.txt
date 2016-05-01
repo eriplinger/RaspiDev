@@ -1,0 +1,5 @@
+Zum Kompilieren müssen die pi4j-Librarys über den classpath angegeben werden:
+javac -classpath .:/opt/pi4j/lib/* CarlCam.java
+
+oder deutlicher
+javac -classpath '.:classes:*:classes:/opt/pi4j/lib/*' -d . CarlCam.java
